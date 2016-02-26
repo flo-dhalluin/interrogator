@@ -1,0 +1,20 @@
+<md-dialog aria-label="new question">
+  <form>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container>
+          <label> Question </label>
+          <textarea ng-model="newQuestionText"
+                    placeholder="Quelle est la couleur du cheval blanc ?"
+                    rows=5>
+          </textarea>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button class="md-raised" ng-click="createQuestion()">Yep</md-button>
+      <md-button class="md-raised" ng-click="closeDialog()">Nope</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

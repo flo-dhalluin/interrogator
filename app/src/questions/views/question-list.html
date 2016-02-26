@@ -1,0 +1,10 @@
+<md-list>
+  <md-list-item ng-click="goToQuestion(item.slug)"
+                ng-repeat="item in questions"
+                class="md-2-line">
+    <div class="md-list-item-text">
+      <h3> {{item.text}} ?? </h3>
+      <p> Asked by <b>{{item.author}}</b> on {{item.time}}  </p>
+    </div>
+  </md-list-item>
+</md-list>

@@ -1,0 +1,18 @@
+{
+  "name": "questions",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Florent D'halluin <flal@melix.net>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-material": "~1.0.5",
+    "angular-route": "~1.5.0",
+    "angular-resource": "~1.5.0"
+  }
+}

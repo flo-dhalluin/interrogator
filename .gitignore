@@ -1,0 +1,4 @@
+__pycache__/
+bower_components/
+node_modules/
+*~
