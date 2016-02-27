@@ -1,9 +1,17 @@
-<md-dialog aria-label="new question">
+<md-dialog aria-label="new question" flex="80">
   <form>
-    <md-dialog-content>
-      <div class="md-dialog-content">
-        <md-input-container>
-          <label> Question </label>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> Nouvelle Question </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="closeDialog()">
+          <md-icon>cancel</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content layout-padding>
+      <div class="md-dialog-content" layount="column">
+        <md-input-container md-no-float class="md-block">
           <textarea ng-model="newQuestionText"
                     placeholder="Quelle est la couleur du cheval blanc ?"
                     rows=5>
@@ -13,8 +21,7 @@
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <span flex></span>
-      <md-button class="md-raised" ng-click="createQuestion()">Yep</md-button>
-      <md-button class="md-raised" ng-click="closeDialog()">Nope</md-button>
+      <md-button class="md-raised" ng-click="createQuestion()">Demander</md-button>
     </md-dialog-actions>
   </form>
 </md-dialog>
