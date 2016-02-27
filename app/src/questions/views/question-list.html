@@ -4,7 +4,7 @@
                 class="md-2-line">
     <div class="md-list-item-text">
       <h3> {{item.text}} ?? </h3>
-      <p> Asked by <b>{{item.author}}</b> on {{item.time}}  </p>
+      <p> Asked by <b>{{item.author}}</b> on {{item.time | date : 'medium'}}  </p>
     </div>
   </md-list-item>
 </md-list>
