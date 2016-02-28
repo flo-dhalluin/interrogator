@@ -4,12 +4,41 @@
         .controller('QuestionCtrl', ['$scope',
 				     '$location',
              '$mdDialog',
+             '$mdToast',
 				     'QuestionService',
+             'QuestionListWatchService',
 				     QuestionCtrl]);
 
-    function QuestionCtrl($scope, $location, $mdDialog, QuestionService) {
+    function QuestionCtrl($scope,
+                          $location,
+                          $mdDialog,
+                          $mdToast,
+                          QuestionService,
+                          QuestionListWatchService) {
 
 	$scope.questions = QuestionService.list();
+
+  var watcher = QuestionListWatchService("ws://localhost:8000/");
+
+  watcher.onMessage(function(data) {
+    console.log(data);
+    if(data.type == "new") {
+        // don't insert if we already have this one
+        if(! $scope.questions.find(function(q) {return q.slug === data.slug}))
+        {
+          $scope.questions.unshift(QuestionService.detail({slug: data.slug}));
+        }
+
+    }
+    // debug toast
+    $mdToast.show(
+      $mdToast.simple()
+              .textContent(data)
+              .position("top right")
+              .hideDelay(10000)
+      );
+  });
+
 
 	$scope.goToQuestion = function(questionId) {
 	    $location.path("/questions/" + questionId);
