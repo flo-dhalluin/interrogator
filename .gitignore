@@ -1,4 +1,7 @@
 __pycache__/
 bower_components/
 node_modules/
+dist/
+.venv/
+*.sqlite3
 *~
