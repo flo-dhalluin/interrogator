@@ -17,7 +17,7 @@ from .serializers import AnswerSerializer
 class QuestionListView(generics.ListCreateAPIView):
 
     model = Question
-    queryset = Question.objects.all()
+    queryset = Question.objects.all().order_by('-time')
     serializer_class = QuestionSerializer
 
     # only auth users can post
